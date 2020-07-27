@@ -6,13 +6,6 @@
 
 
 
-// function ricercaTesto (){
-//   var target = $('#input').val()
-//   var valore = target.val()
-//   console.log("input= " + valore);
-// }
-
-
 function buttonClicked (){
 var targetRicerca = $('#input').val()
 
@@ -49,7 +42,6 @@ function buttonClick (){
 }
 
 function init (){
-  // ricercaTesto()
   buttonClick ()
 }
 

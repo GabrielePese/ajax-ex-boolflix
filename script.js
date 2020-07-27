@@ -3,26 +3,38 @@
 // 2.Titolo Originale
 // 3.Lingua
 // 4.Voto
-//
+
+
+
+// function ricercaTesto (){
+//   var target = $('#input').val()
+//   var valore = target.val()
+//   console.log("input= " + valore);
+// }
 
 
 function buttonClicked (){
+var targetRicerca = $('#input').val()
+
   $.ajax({
-    url:"https://api.themoviedb.org/3/search/movie?api_key=12485dad4e901245b9d438efa6cc3407&query=ritorno+al+futuro",
+    url:"https://api.themoviedb.org/3/search/movie?api_key=12485dad4e901245b9d438efa6cc3407&query=" + (targetRicerca),
     method:"GET",
     success: function (data){
+
       var results = data['results'];
       console.log(data);
 
-      var target = $("h2");
-      var compiled = Handlebars.compile(template);
       var template = $("#template").html()
-
+      var compiled = Handlebars.compile(template);
+      var target = $("h2");
+      target.html("")
       for (var i = 0; i < results.length; i++) {
         var risulato = results[i]
-        var risultatoHTML = compiled(risultato);
+        var risultatoHTML = compiled(risulato);
         target.append(risultatoHTML)
+
       }
+
     },
     error:function(){
       console.log("error");
@@ -37,7 +49,7 @@ function buttonClick (){
 }
 
 function init (){
-
+  // ricercaTesto()
   buttonClick ()
 }
 

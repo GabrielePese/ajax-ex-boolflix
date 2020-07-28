@@ -31,7 +31,7 @@ var targetRicerca = $('#input').val()
         risulato.vote_average = Math.round(risulato.vote_average)
         console.log(risulato.vote_average);
 
-        for (var i = 0; i < risulato.vote_average; i++) {
+        for (var j = 0; j < risulato.vote_average; j++) {
           var targetStella = $('#targetStella')
           targetStella.append('<i class="fas fa-star"></i>');
 

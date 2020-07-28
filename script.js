@@ -70,7 +70,9 @@ var targetRicerca = $('#input').val()
       var risultati = res[i];
 
       risultati.vote_average = perStelline(risultati.vote_average);
-      // risultati.origin_country = risultati.origin_country[0]
+
+      risultati.origin_country = '<img src="'+ risultati.origin_country +'.png" alt="'+risultati.origin_country+'">'
+
       var risultatiHTML = compiled(risultati);
       target.append(risultatiHTML)
       }

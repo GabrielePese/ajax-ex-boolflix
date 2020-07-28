@@ -21,17 +21,33 @@
     </div>
     <input id="input" type="text" name="" value="">
     <button id="bottone" type="button" name="button">Ricerca</button>
+    <br>
 
-
+    FILM
     <h2></h2>
+
+    SERIE TV
+    <h3></h3>
 
 
     <script id="template" type="text/x-handlebars-template">
       <ul>
         <li>{{title}}</li>
         <li>{{original_title}}</li>
-        <li class="lingua">{{original_language}}</li>
-        <li class="targetStella">{{vote_average}}</li>
+        <li>{{{original_language}}}</li>
+        <li>{{{vote_average}}}</li>
+      </ul>
+
+
+
+    </script>
+
+    <script id="templateSerie" type="text/x-handlebars-template">
+      <ul>
+        <li>{{name}}</li>
+        <li>{{original_name}}</li>
+        <li>{{origin_country}}</li>
+        <li>{{{vote_average}}}</li>
       </ul>
 
 

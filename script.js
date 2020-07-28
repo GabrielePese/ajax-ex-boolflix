@@ -26,22 +26,16 @@ var targetRicerca = $('#input').val()
 
       for (var i = 0; i < results.length; i++) {
 
-        var risulato = results[i]
-        risulato.vote_average = (risulato.vote_average/2)
-        risulato.vote_average = Math.round(risulato.vote_average)
+        var risultato = results[i];
 
 
+        risultato.vote_average = perStelline(risultato.vote_average);
 
-        for (var k = 0; k < risulato.vote_average; k++) {
-          var targetStella = $('.targetStella')
-          targetStella.append('<i class="fas fa-star"></i>');
-        }
 
-        // if (risulato.original_language == "en") {
-        //   $('.lingua').addClass("zio")
-        // }
+        risultato.original_language = '<img src="'+ risultato.original_language +'.png" alt="'+risultato.original_language+'">'
 
-        var risultatoHTML = compiled(risulato);
+
+        var risultatoHTML = compiled(risultato);
         target.append(risultatoHTML)
       }
 
@@ -53,8 +47,54 @@ var targetRicerca = $('#input').val()
       console.log("error");
     }
   })
+
+// AJAX SERIE  TV
+
+  $.ajax({
+
+    url:"https://api.themoviedb.org/3/search/tv?api_key=12485dad4e901245b9d438efa6cc3407&query=" + (targetRicerca),
+    method:"GET",
+    success: function (data){
+
+      var res = data['results'];
+      console.log(data['results'][0]['origin_country']);
+
+
+      var template = $("#templateSerie").html()
+      var compiled = Handlebars.compile(template);
+      var target = $("h3");
+      target.html("")
+
+      for (var i = 0; i < res.length; i++) {
+
+      var risultati = res[i];
+
+      risultati.vote_average = perStelline(risultati.vote_average);
+      // risultati.origin_country = risultati.origin_country[0]
+      var risultatiHTML = compiled(risultati);
+      target.append(risultatiHTML)
+      }
+
+    },
+    error:function(){
+      console.log("error");
+    }
+  })
+
 }
 
+function perStelline (vote){
+  vote = (vote/2)
+  vote = Math.round(vote)
+
+
+  var prova = "";
+  for (var k = 0; k < vote; k++) {
+    prova += '<i class="fas fa-star"></i>';
+
+  }
+  return prova;
+}
 
 function buttonClick (){
   var target = $("#bottone")

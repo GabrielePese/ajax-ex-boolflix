@@ -29,17 +29,23 @@ var targetRicerca = $('#input').val()
         var risulato = results[i]
         risulato.vote_average = (risulato.vote_average/2)
         risulato.vote_average = Math.round(risulato.vote_average)
-        console.log(risulato.vote_average);
 
-        for (var j = 0; j < risulato.vote_average; j++) {
-          var targetStella = $('#targetStella')
-          targetStella.append('<i class="fas fa-star"></i>');
 
+        if (risulato.original_language == "en") {
+          $('.lingua').addClass("zio")
         }
 
         var risultatoHTML = compiled(risulato);
         target.append(risultatoHTML)
       }
+
+
+
+      for (var k = 0; k < risulato.vote_average; k++) {
+        var targetStella = $('.targetStella')
+        targetStella.append('<i class="fas fa-star"></i>');
+      }
+
 
     },
     error:function(){

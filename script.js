@@ -31,20 +31,21 @@ var targetRicerca = $('#input').val()
         risulato.vote_average = Math.round(risulato.vote_average)
 
 
-        if (risulato.original_language == "en") {
-          $('.lingua').addClass("zio")
+
+        for (var k = 0; k < risulato.vote_average; k++) {
+          var targetStella = $('.targetStella')
+          targetStella.append('<i class="fas fa-star"></i>');
         }
+
+        // if (risulato.original_language == "en") {
+        //   $('.lingua').addClass("zio")
+        // }
 
         var risultatoHTML = compiled(risulato);
         target.append(risultatoHTML)
       }
 
 
-
-      for (var k = 0; k < risulato.vote_average; k++) {
-        var targetStella = $('.targetStella')
-        targetStella.append('<i class="fas fa-star"></i>');
-      }
 
 
     },

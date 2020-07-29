@@ -109,8 +109,15 @@ function perStelline (vote){
 
 
   var prova = "";
-  for (var k = 0; k < vote; k++) {
-    prova += '<i class="fas fa-star"></i>'
+  for (var k = 0; k < 5; k++) {
+
+    if (k < vote) {
+      prova += '<i class="fas fa-star"></i>'
+    }
+    else {
+      prova += '<i class="far fa-star"></i>'
+    }
+
 
 
   }

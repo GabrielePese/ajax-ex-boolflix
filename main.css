@@ -3,3 +3,11 @@
   width: 30px;
   border: 1px solid black;
 }
+
+ul{
+  list-style: none;
+}
+
+.inline{
+  display: inline-block;
+}

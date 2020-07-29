@@ -37,13 +37,14 @@ var targetRicerca = $('#input').val()
 
         var risultato = results[i];
 
+        risultato.stars = Math.ceil(risultato['vote_average']/2)
 
         risultato.vote_average = perStelline(risultato.vote_average);
 
 
         risultato.original_language = '<img id="lan" src="'+ risultato.original_language +'.png" alt="'+risultato.original_language+'">'
 
-        risultato.poster_path = '<img src="https://image.tmdb.org/t/p/w300/'+ risultato.poster_path+'" alt="">'
+        risultato.poster_path = '<img src="https://image.tmdb.org/t/p/w300'+ risultato.poster_path+'" alt="">'
 
 
 
@@ -81,11 +82,13 @@ var targetRicerca = $('#input').val()
 
       var risultati = res[i];
 
+
+      risultati.stars = Math.ceil(risultati['vote_average']/2)
       risultati.vote_average = perStelline(risultati.vote_average);
 
       risultati.origin_country = '<img id="lan" src="'+ risultati.origin_country +'.png" alt="'+risultati.origin_country+'">'
 
-      risultati.poster_path = '<img src="https://image.tmdb.org/t/p/w300/'+ risultati.poster_path+'" alt="">'
+      risultati.poster_path = '<img src="https://image.tmdb.org/t/p/w300'+ risultati.poster_path+'" alt="">'
 
 
       var risultatiHTML = compiled(risultati);
@@ -102,12 +105,13 @@ var targetRicerca = $('#input').val()
 
 function perStelline (vote){
   vote = (vote/2)
-  vote = Math.round(vote)
+  vote = Math.ceil(vote)
 
 
   var prova = "";
   for (var k = 0; k < vote; k++) {
-    prova += '<i class="fas fa-star"></i>';
+    prova += '<i class="fas fa-star"></i>'
+
 
   }
   return prova;

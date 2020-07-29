@@ -8,6 +8,15 @@
 
 // Milestone 2:Trasformiamo il voto da 1 a 10 decimale in un numero intero da 1 a 5, così dapermetterci di stampare a schermo un numero di stelle piene che vanno da 1 a 5,lasciando le restanti vuote (troviamo le icone in FontAwesome).Arrotondiamo sempre per eccesso all’unità successiva, non gestiamo icone mezzepiene (o mezze vuote :P)Trasformiamo poi la stringa statica della lingua in una vera e propria bandiera dellanazione corrispondente, gestendo il caso in cui non abbiamo la bandiera dellanazione ritornata dall’API (le flag non ci sono in FontAwesome).Allarghiamo poi la ricerca anche alle serie tv. Con la stessa azione di ricercadovremo prendere sia i film che corrispondono alla query, sia le serie tv, standoattenti ad avere alla fine dei valori simili (le serie e i film hanno campi nel JSON dirisposta diversi, simili ma non sempre identici)Qui un esempio di chiamata per le serie tv:
 
+
+
+// MILESTONE 3:
+//
+// In questa milestone come prima cosa aggiungiamo la copertina del film o della serie al nostro elenco. Ci viene passata dall’API solo la parte finale dell’URL, questo perché poi potremo generare da quella porzione di URL tante dimensioni diverse.Dovremo prendere quindi l’URL base delle immagini di TMDB:https://image.tmdb.org/t/p/​ per poi aggiungere la dimensione che vogliamo generare(troviamo tutte le dimensioni possibili a questo link:https://www.themoviedb.org/talk/53c11d4ec3a3684cf4006400​) per poi aggiungere laparte finale dell’URL passata dall’API.Esempio di URL che torna la copertina di BORIS:https://image.tmdb.org/t/p/w185/s2VDcsMh9ZhjFUxw77uCFDpTuXp.jpg
+
+
+
+
 function buttonClicked (){
 var targetRicerca = $('#input').val()
 
@@ -32,7 +41,10 @@ var targetRicerca = $('#input').val()
         risultato.vote_average = perStelline(risultato.vote_average);
 
 
-        risultato.original_language = '<img src="'+ risultato.original_language +'.png" alt="'+risultato.original_language+'">'
+        risultato.original_language = '<img id="lan" src="'+ risultato.original_language +'.png" alt="'+risultato.original_language+'">'
+
+        risultato.poster_path = '<img src="https://image.tmdb.org/t/p/w300/'+ risultato.poster_path+'" alt="">'
+
 
 
         var risultatoHTML = compiled(risultato);
@@ -71,7 +83,10 @@ var targetRicerca = $('#input').val()
 
       risultati.vote_average = perStelline(risultati.vote_average);
 
-      risultati.origin_country = '<img src="'+ risultati.origin_country +'.png" alt="'+risultati.origin_country+'">'
+      risultati.origin_country = '<img id="lan" src="'+ risultati.origin_country +'.png" alt="'+risultati.origin_country+'">'
+
+      risultati.poster_path = '<img src="https://image.tmdb.org/t/p/w300/'+ risultati.poster_path+'" alt="">'
+
 
       var risultatiHTML = compiled(risultati);
       target.append(risultatiHTML)

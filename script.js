@@ -44,7 +44,7 @@ var targetRicerca = $('#input').val()
 
         risultato.original_language = '<img id="lan" src="'+ risultato.original_language +'.png" alt="'+risultato.original_language+'">'
 
-        risultato.poster_path = '<img src="https://image.tmdb.org/t/p/w300'+ risultato.poster_path+'" alt="">'
+        risultato.poster_path = '<img class="imag" src="https://image.tmdb.org/t/p/w300'+ risultato.poster_path+'" alt="Manca immagine">'
 
 
 
@@ -88,7 +88,7 @@ var targetRicerca = $('#input').val()
 
       risultati.origin_country = '<img id="lan" src="'+ risultati.origin_country +'.png" alt="'+risultati.origin_country+'">'
 
-      risultati.poster_path = '<img src="https://image.tmdb.org/t/p/w300'+ risultati.poster_path+'" alt="">'
+      risultati.poster_path = '<img class="imag" src="https://image.tmdb.org/t/p/w300'+ risultati.poster_path+'" alt="Manca immagine">'
 
 
       var risultatiHTML = compiled(risultati);

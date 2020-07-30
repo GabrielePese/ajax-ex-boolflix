@@ -30,32 +30,30 @@
     <main>
 
 
-      <button id="bottone" type="button" name="button">Ricerca</button>
-      <br>
-
-      FILM
+      <h3>FILM</h3>
       <div class="targetMovie">
 
       </div>
 
-      SERIE TV
+      <h3>SERIE TV</h3>
       <div class="targetSerie">
 
       </div>
+
 
       <script id="template" type="text/x-handlebars-template">
 
         <div class="contenitore">
         <ul>
-          <li>{{title}}</li>
-          <li>{{original_title}}</li>
-          <li>{{{original_language}}}</li>
-          <li class="inline">{{{stars}}}</li>
-          <li class="inline">{{{vote_average}}}</li>
-
-
-          <li>{{{poster_path}}}</li>
-
+          <li class="riga">{{{poster_path}}}</li>
+          <div class="info hidden">
+          <li class="riga">{{title}}</li>
+          <li class="riga">{{original_title}}</li>
+          <li class="riga">{{{original_language}}}</li>
+          <li class="inline riga">{{{stars}}}</li>
+          <li class="inline ">{{{vote_average}}}</li>
+          <li class="riga">{{overview}}</li>
+        </div>
         </ul>
       </div>
 
@@ -64,14 +62,21 @@
       </script>
 
       <script id="templateSerie" type="text/x-handlebars-template">
-        <ul>
-          <li>{{name}}</li>
-          <li>{{original_name}}</li>
-          <li>{{{origin_country}}}</li>
-          <li class="inline">{{{stars}}}</li>
-          <li class="inline">{{{vote_average}}}</li>
-          <li>{{{poster_path}}}</li>
-        </ul>
+
+        <div class="contenitore">
+            <ul>
+              <li class="riga">{{{poster_path}}}</li>
+              <div class="info hidden">
+                <li class="riga">{{name}}</li>
+                <li class="riga">{{original_name}}</li>
+                <li class="riga">{{{origin_country}}}</li>
+                <li class="inline riga">{{{stars}}}</li>
+                <li class="inline">{{{vote_average}}}</li>
+                <li class="riga">{{overview}}</li>
+              </div>
+            </ul>
+          </div>
+
 
 
 

@@ -23,43 +23,77 @@ header .input {
   margin-right: 10px;
 
 }
-  .pippo{
-    height: 100px;
-    width: 100px;
-    z-index: 99;
-  }
 
-  
+
 main{
   padding-left: 10px;
   padding-top: 50px;
   background-color: #cccccc;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
 }
 .contenitore{
-  border: 1px solid black;
-  margin-right: 5px;
+  position: relative;
+  margin-right: 15px;
 }
 
+
+.contenitore:hover .info{
+  display: block;
+}
+
+.riga{
+  margin-bottom: 3px;
+}
+
+
+
 .targetMovie{
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
 .targetSerie{
+  height: auto;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
+
 #lan{
   height: 20px;
   width: 30px;
   border: 1px solid black;
 }
-
+.fa-star{
+  color:yellow;
+}
 ul{
   list-style: none;
 }
+
+img{
+  height: 100%;
+}
+
+
+.info{
+  overflow-y: scroll;
+  height: 100%;
+  width: 100%;
+  color:white;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+.hidden{
+  display: none;
+}
+
 
 .inline{
   display: inline-block;

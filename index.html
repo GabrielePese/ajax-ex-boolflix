@@ -16,50 +16,67 @@
   </head>
   <body>
 
-    <div class="title">
-      <h1>BOOLFIX</h1>
-    </div>
-    <input id="input" type="text" name="" value="">
-    <button id="bottone" type="button" name="button">Ricerca</button>
-    <br>
+    <header>
+      <div class="logo">
+          BOOLFLIX
+      </div>
+      <div class="input">
+        <input id="input" type="text" name="" value="" placeholder="Ricerca..">
 
-    FILM
-    <h2></h2>
+      </div>
 
-    SERIE TV
-    <h3></h3>
+    </header>
 
-
-
-    <script id="template" type="text/x-handlebars-template">
-      <ul>
-        <li>{{title}}</li>
-        <li>{{original_title}}</li>
-        <li>{{{original_language}}}</li>
-        <li class="inline">{{{stars}}}</li>
-        <li class="inline">{{{vote_average}}}</li>
-        <li>{{{poster_path}}}</li>
-
-      </ul>
+    <main>
 
 
+      <button id="bottone" type="button" name="button">Ricerca</button>
+      <br>
+
+      FILM
+      <div class="targetMovie">
+
+      </div>
+
+      SERIE TV
+      <div class="targetSerie">
+
+      </div>
+
+      <script id="template" type="text/x-handlebars-template">
+
+        <div class="contenitore">
+        <ul>
+          <li>{{title}}</li>
+          <li>{{original_title}}</li>
+          <li>{{{original_language}}}</li>
+          <li class="inline">{{{stars}}}</li>
+          <li class="inline">{{{vote_average}}}</li>
 
 
-    </script>
+          <li>{{{poster_path}}}</li>
 
-    <script id="templateSerie" type="text/x-handlebars-template">
-      <ul>
-        <li>{{name}}</li>
-        <li>{{original_name}}</li>
-        <li>{{{origin_country}}}</li>
-        <li class="inline">{{{stars}}}</li>
-        <li class="inline">{{{vote_average}}}</li>
-        <li>{{{poster_path}}}</li>
-      </ul>
+        </ul>
+      </div>
 
 
 
-    </script>
+      </script>
+
+      <script id="templateSerie" type="text/x-handlebars-template">
+        <ul>
+          <li>{{name}}</li>
+          <li>{{original_name}}</li>
+          <li>{{{origin_country}}}</li>
+          <li class="inline">{{{stars}}}</li>
+          <li class="inline">{{{vote_average}}}</li>
+          <li>{{{poster_path}}}</li>
+        </ul>
+
+
+
+      </script>
+    </main>
 
   </body>
 </html>

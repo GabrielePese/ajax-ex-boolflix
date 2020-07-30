@@ -30,7 +30,7 @@ var targetRicerca = $('#input').val()
 
       var template = $("#template").html()
       var compiled = Handlebars.compile(template);
-      var target = $("h2");
+      var target = $(".targetMovie");
       target.html("")
 
       for (var i = 0; i < results.length; i++) {
@@ -75,7 +75,7 @@ var targetRicerca = $('#input').val()
 
       var template = $("#templateSerie").html()
       var compiled = Handlebars.compile(template);
-      var target = $("h3");
+      var target = $(".targetSerie");
       target.html("")
 
       for (var i = 0; i < res.length; i++) {
@@ -127,7 +127,18 @@ function perStelline (vote){
 function buttonClick (){
   var target = $("#bottone")
   target.click(buttonClicked);
+
+
 }
+
+// PER FARE ANDARE CON INVIO LA RICERCA:
+
+
+$(document).on('keypress',function(event) {
+    if(event.which == 13) {
+        buttonClicked()
+    }
+});
 
 function init (){
   buttonClick ()

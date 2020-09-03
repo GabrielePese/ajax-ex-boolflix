@@ -83,6 +83,7 @@ var targetRicerca = $('#input').val()
       var risultati = res[i];
 
 
+
       risultati.stars = Math.ceil(risultati['vote_average']/2)
       risultati.vote_average = perStelline(risultati.vote_average);
 
